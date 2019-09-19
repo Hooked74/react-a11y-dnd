@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+import { dirname } from "path";
 import babel from "rollup-plugin-babel";
 import tslint from "rollup-plugin-tslint";
 import commonjs from "rollup-plugin-commonjs";
@@ -11,6 +12,7 @@ import { uglify } from "rollup-plugin-uglify";
 import strip from "rollup-plugin-strip";
 import replace from "rollup-plugin-replace";
 import { sizeSnapshot } from "rollup-plugin-size-snapshot";
+import license from "rollup-plugin-license";
 
 import pkg from "./package.json";
 
@@ -63,7 +65,7 @@ export default [
       url({ exclude: ["**/*.svg"] }),
       json(),
       svgr(),
-      resolve({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
+      replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
       commonjs(commonjsArgs),
       babel(getBabelOptions({ useESModules: true })),
       license(banner),
@@ -87,7 +89,7 @@ export default [
       url({ exclude: ["**/*.svg"] }),
       json(),
       svgr(),
-      resolve({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
+      replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
       commonjs(commonjsArgs),
       strip({ debugger: true }),
       babel(getBabelOptions({ useESModules: true })),
@@ -110,7 +112,7 @@ export default [
       url({ exclude: ["**/*.svg"] }),
       json(),
       svgr(),
-      resolve({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
+      replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
       commonjs(commonjsArgs),
       babel(getBabelOptions({ useESModules: false })),
       license(banner),
@@ -131,7 +133,7 @@ export default [
       url({ exclude: ["**/*.svg"] }),
       json(),
       svgr(),
-      resolve({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
+      replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
       commonjs(commonjsArgs),
       babel(getBabelOptions({ useESModules: false })),
       license(banner),

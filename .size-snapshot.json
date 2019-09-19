@@ -1,23 +1,23 @@
 {
   "dist/react-a11y-dnd.js": {
-    "bundled": 657,
-    "minified": 389,
-    "gzipped": 272
+    "bundled": 634,
+    "minified": 267,
+    "gzipped": 203
   },
   "dist/react-a11y-dnd.min.js": {
-    "bundled": 389,
-    "minified": 389,
-    "gzipped": 272
+    "bundled": 353,
+    "minified": 267,
+    "gzipped": 203
   },
   "dist/react-a11y-dnd.cjs.js": {
-    "bundled": 382,
-    "minified": 283,
-    "gzipped": 210
+    "bundled": 340,
+    "minified": 103,
+    "gzipped": 112
   },
   "dist/react-a11y-dnd.esm.js": {
-    "bundled": 262,
-    "minified": 181,
-    "gzipped": 153,
+    "bundled": 258,
+    "minified": 34,
+    "gzipped": 50,
     "treeshaked": {
       "rollup": {
         "code": 0,
@@ -27,5 +27,6 @@
         "code": 951
       }
     }
-  }
+  },
+  "module": "112 B"
 }
