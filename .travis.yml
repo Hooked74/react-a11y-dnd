@@ -1,0 +1,35 @@
+dist: trusty
+language: node_js
+node_js:
+  - 12
+cache:
+  directories:
+    - node_modules
+install:
+  - npm ci
+script:
+  - npm test
+  - npm i -g codecov
+  - codecov --token="$CODECOV_TOKEN"
+before_deploy:
+  - npm run build
+  - npm run build:storybook
+deploy:
+  provider: npm
+  email: novikovio74@gmail.com
+  skip_cleanup: true
+  tag: latest
+  on:
+    branch: master
+    repo: Hooked74/react-a11y-dnd
+  api_key:
+    secure: AZZtyUrcagannjB06/dKHNJXxt4+h/ZmEPdiQ86GIbYkFABXgmNAyS6732WM4nBZV/LE8rSjuXrPurEByIIhQfHRmOk3UNH3tKRxKlmRCbHQiPDOK16K3cw2z5e8A/Lz6JUZCfVhVt7rbJey7+YCg1U6+kAz5a2o9pEHBcDLcM34SgIHVVCbRj/PAeoF0quK64IirO/C8P3NZRQ1VdX/BW0rWq57nWl1wurLn2KelLifftUPzPfsdFLE9ezhgDYJO1AxYLSPeVgN4Teihcrk+whu4D0LZz3sdzin0z+C8zDRtkL5dntkSj6y5C9fOnYRwD4NimH/EOWc0LAvLfGFju0lwVn6M+p/5phhyGgdyCFrMC9rODVn0+a5ux+pNd5udRs+w1EIN6XdpLOhwWKb+iFnHfq0SkHeybwIOiYCd95hkXs1cjaf6vaNTxbJXGrLrA1OI8t8PRphQ0bxsoqpR6Y5tZPmZ3pExc6WVndxk3JWWQZ2nqGNg9ebooTxKr6wYPnEEsfcir3mglP4WLG/O4b/2yGvITvneZc3aKwW68zIcTlK1Ih6ylxklpPZ9Grkx2YPe+XXRXxAUOFACFi61yZlZsJDFIhOAlLz3eL7LsbCV3T2jxS6cKtqxjPSR2SVYJEXvFZSZtAKndUFmoNjv3JrOOhRZ+mJHYTqxmuh6lw=
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: example
+  on:
+    branch: master
+    repo: Hooked74/react-a11y-dnd

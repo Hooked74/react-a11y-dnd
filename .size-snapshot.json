@@ -1,0 +1,31 @@
+{
+  "dist/react-a11y-dnd.js": {
+    "bundled": 657,
+    "minified": 389,
+    "gzipped": 272
+  },
+  "dist/react-a11y-dnd.min.js": {
+    "bundled": 389,
+    "minified": 389,
+    "gzipped": 272
+  },
+  "dist/react-a11y-dnd.cjs.js": {
+    "bundled": 382,
+    "minified": 283,
+    "gzipped": 210
+  },
+  "dist/react-a11y-dnd.esm.js": {
+    "bundled": 262,
+    "minified": 181,
+    "gzipped": 153,
+    "treeshaked": {
+      "rollup": {
+        "code": 0,
+        "import_statements": 0
+      },
+      "webpack": {
+        "code": 951
+      }
+    }
+  }
+}
